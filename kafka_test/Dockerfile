@@ -16,5 +16,5 @@ RUN dotnet publish "kafka_test.csproj" -c Release -o /app/publish /p:UseAppHost=
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-EXPOSE 4321/tcp
+EXPOSE 4321
 ENTRYPOINT ["dotnet", "kafka_test.dll"]
